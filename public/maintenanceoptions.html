@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AutoLog</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="stylesheet" href="responsive.css" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="/maintenanceoptions.html">Maintenance Options</a></li>
+            <li><a id="profile" href="/profile.html">Scheduled Maintenance</a></li>
+            <li><a id="logout" href="#">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="pageintro">
+
+        <section>
+            <!-- <div class="autolog-back-button-container"> -->
+            <div><i class="fas fa-arrow-left" style="display: none;"></i></div>
+                <h1 class="intro-heading">Maintenance Options</h1>
+            <!-- </div> -->
+            <!-- MAINTENANCE OPTIONS -->
+            <div class="maintenance-options-buttons-container">
+                <div><button class="fluids-button maintenance-options-button">Fluids</button></div>
+                <div><button class="filters-button maintenance-options-button">Filters</button></div>
+                <div><button class="tires-button maintenance-options-button" >Tires</button></div>
+                <div><button class="lights-button maintenance-options-button">Lights</button></div>
+                <div><button class="cleaning-button maintenance-options-button">Cleaning</button></div>
+                <div><button class="oil-button maintenance-options-button">Oil</button></div>
+            </div>
+            <!-- SUB-MAINTENANCE OPTIONS -->
+            <div class="sub-maintenance-options-buttons-container" hidden>
+                <div class="sub-maintenance-fluids" hidden>
+                    <h2 class="maintenanceType">Fluids</h>
+                    <div><button class="fluid-details-button sub-maintenance-options-button">Windshield Washer Fluid</button></div>
+                    <div><button class="fluid-details-button sub-maintenance-options-button">Automatic Transmission Fluid</button></div>
+                    <div><button class="fluid-details-button sub-maintenance-options-button">Power Steering Fluid</button></div>
+                    <div><button class="fluid-details-button sub-maintenance-options-button">Chassis Lubrication</button></div>
+                </div>
+    
+                <div class="sub-maintenance-filters" hidden>
+                    <h2>Filters</h2>
+                    <div><button class="filters-details-button sub-maintenance-options-button">Fuel Filter</button></div>
+                    <div><button class="filters-details-button sub-maintenance-options-button">Engine Filter</button></div>
+                    <div><button class="filters-details-button sub-maintenance-options-button">Cabin Filter</button></div>
+                </div>
+    
+                <div class="sub-maintenance-tires" hidden>
+                    <h2>Tires</h2>
+                    <div><button class="tire-details-button sub-maintenance-options-button">Inflation</button></div>
+                    <div><button class="tire-details-button sub-maintenance-options-button">Tread</button></div>
+                    <div><button class="tire-details-button sub-maintenance-options-button">General Condition</button></div>
+                </div>
+    
+                <div class="sub-maintenance-lights" hidden>
+                    <h2>Lights</h2>
+                    <div><button class="lights-details-button sub-maintenance-options-button">Check Lights</button></div>
+                    <div><button class="lights-details-button sub-maintenance-options-button">Replace Bulb</button></div>
+                </div>
+    
+                <div class="sub-maintenance-cleaning" hidden>
+                    <h2>Cleaning</h2>
+                    <div><button class="cleaning-details-button sub-maintenance-options-button">Interior</button></div>
+                    <div><button class="cleaning-details-button sub-maintenance-options-button">Exterior</button></div>
+                </div>
+    
+                <div class="sub-maintenance-oil" hidden>
+                    <h2>Oil</h2>
+                    <div><button class="oil-details-button sub-maintenance-options-button">Check Oil</button></div>
+                    <div><button class="oil-details-button sub-maintenance-options-button">Oil Change</button></div>
+                </div>
+                
+            </div>
+            <!-- <button type="button" class="trip-button">New Trip</button> -->
+        </section>
+
+    </div>
+
+
+    <section class="logo"> 
+        <img alt="Traveling Icon" src="http://chittagongit.com/images/traveling-icon/traveling-icon-18.jpg" alt="">
+    </section>
+
+    <section class="trip-form">
+
+        <form class="tripForm" action="">
+            <label for="tripName">Trip Name</label>
+            <input class="trippform" id="tripName" type="text" required>
+
+            <legend class="formText">Flight Info:</legend>
+            <label for="boarding" class="boarding">Boarding</label>
+            <input  class="trippform" id="boarding" type="time">
+
+            <label for="departure" class="departure">Departure </label>
+            <input  class="trippform" id="departure" type="time">
+
+            <label for="arival">Arrival</label>
+            <input  class="trippform" id="arival" type="time">
+
+            <label for="terminal">Terminal</label>
+            <input class="trippform"  id="terminal" type="text">
+
+            <label for="gate">Gate</label>
+            <input  class="trippform" id="gate" type="text">
+
+            <legend class="formText">Hotel Info:</legend>
+
+            <label for="hotelName">Name</label>
+            <input class="trippform" id="hotelName" type="text">
+
+            <label for="building">Building</label>
+            <input class="trippform" id="building" type="text">
+
+            <label for="street">Street</label>
+            <input class="trippform" id="street" type="text">
+
+            <label for="zipcode">Zipcode</label>
+            <input class="trippform" id="zipcode" type="number">
+
+            <label for="check-in">Check-in</label>
+            <input class="trippform" id="check-in" type="time">
+
+            <label for="check-out">Check-out</label>
+            <input class="trippform" id="check-out" type="time">
+
+            <legend class="formText">Car Rental:</legend>
+
+            <label for="carRental-name">Name</label>
+            <input class="trippform" id="carRental-name" type="text">
+
+            <label for="confirmation" class="last-name">Confirmation #</label>
+            <input  class="trippform" id="confirmation" type="text">
+
+            <!-- <legend>Activities</legend>
+
+            <label for="activeName">Name</label>
+            <input id="activeName" type="text">
+
+            <label for="activeDate">Date</label>
+            <input id="activeDate" type="date">
+
+            <label for="activeTime">Time</label>
+            <input id="activeTime" type="time"> -->
+
+            <!-- <label for="activeName">Name</label>
+            <input id="activeName" type="text">
+
+            <label for="activeDate">Date</label>
+            <input id="activeDate" type="text">
+
+            <label for="activeTime">Time</label>
+            <input id="activeTime" type="text"> -->
+            <button class="submit-form" type="submit">Submit</button>
+
+        </form>
+
+    </section>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="index.js" type="text/javascript" charset="utf-8"></script>
+<script src="main.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

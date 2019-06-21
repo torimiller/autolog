@@ -1,0 +1,551 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Landing-Page StyleSheet */
+
+main {
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    transform-style: preserve-3d;
+    perspective: 100px;
+}
+
+main:before {
+    background: linear-gradient(45deg, rgba(13, 13, 13, 0.575), rgba(6, 22, 93, 0.5)),
+        url(https://i.imgur.com/6pAnv87.jpg) no-repeat bottom;
+    /* background: linear-gradient(to bottom, rgba(6, 22, 93, 0.5), rgba(13, 13, 13, 0.575)),
+        url(https://i.imgur.com/6pAnv87.jpg) no-repeat bottom; */
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)),
+        url(https://i.imgur.com/6pAnv87.jpg) no-repeat bottom; */
+    background-size: cover;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+body {
+    background-color: whitesmoke;
+    margin: 0px;
+}
+
+.introTextContainer {
+    vertical-align: top;
+    padding: 25px;
+    margin: 0px auto;
+    display: inline-block;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.introText {
+    /* width: 370px; */
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+
+.header-text {
+    /* padding: 100px; */
+    margin: 30px;
+    /* background: rgba(50, 50, 50, .6); */
+}
+
+.header-title {
+    font-family: 'Arvo', serif;
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.header-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+}
+
+.header-title,
+.header-subtitle {
+    color: #fff;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.buttonContainer {
+    display: block;
+    margin: 0px auto;
+}
+
+.header-button {
+    transform: translateZ(.1px);
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #4CD066;
+    border: none;
+    color: black;
+    text-align: center;
+    font-family: 'Arvo', serif;
+    font-size: 20px;
+    padding: 20px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.header-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.header-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.header-button:hover span {
+    padding-right: 25px;
+}
+
+.header-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.demo-text {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: 'Lato', serif;
+    color: white;
+    font-size: 20px
+}
+
+.demo-button {
+    font-family: 'Arvo', serif;
+    margin-bottom: 30px;
+    background-color: #1026CB;
+    color: white;
+}
+
+/* Login/Register Form  */
+
+.signin-register {
+    background: rgba(44, 62, 80, 0.7);
+    padding: 40px;
+    width: auto;
+    margin: auto;
+    margin-top: 90px;
+    /* height: 400px; */
+    height: auto;
+    margin-left: 180x;
+    border-radius: 5px;
+
+}
+
+.signin-form,
+.register-form {
+    width: 240px;
+    text-align: center;
+}
+
+.form-input {
+    width: 240px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    /* font-weight: 200px; */
+    padding: 10px 0;
+    transition: border 0.5s;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.trippform {
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    /* font-weight: 200px; */
+    padding: 10px 0;
+    transition: border 0.5s;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.login-button[type=submit] {
+    border: none;
+    width: 190px;
+    background: white;
+    color: #000;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.login-button[type=submit]:hover {
+    color: #fff;
+    background-color: black;
+}
+
+.register-button {
+    border: none;
+    width: 190px;
+    background: white;
+    color: #000;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    color: #fff;
+    background-color: black;
+}
+
+a {
+    color: yellow;
+    text-decoration: blink;
+}
+
+a:hover {
+    color: skyblue;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+::placeholder {
+    color: aliceblue;
+    opacity: 0.8;
+
+}
+
+/* Home Stylesheet */
+
+.trip-form {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    display: none;
+}
+
+nav {
+    z-index: 1000;
+    font-family: 'Arvo', serif;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #0D0D0D;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+nav ul li {
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    height: 2%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+}
+
+/* an underline appears at the bottom on hover of each link */
+
+nav ul li a:hover,
+nav ul li a:active {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 8px;
+}
+
+.fa-arrow-left {
+    font-size: 40px;
+    color: black;
+}
+
+
+.pageintro {
+    padding: 150px 0 130px 50px;
+}
+
+.pageintro section {
+    display: block;
+    max-width: 45%;
+    word-wrap: break-word;
+    margin-left: 70px;
+}
+
+.intro-heading {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 60px;
+    font-family: 'Arvo', serif;
+    color: #06165D;
+}
+
+.maintenanceType, .subMaintenanceH2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.pageintro p:first-of-type {
+    margin-bottom: 30px;
+}
+
+.pageintro p:last-of-type {
+    text-transform: uppercase;
+}
+
+.maintenance-options-button, .sub-maintenance-options-button {
+    font-size: 20px;
+    margin-top: 10px;
+    display: inline-block;
+    padding: 8px 18px 10px;
+    text-transform: uppercase;
+    border: 1px solid;
+    color: #FFFFFF;
+    background-color: #4CD066;
+    border-color: #4CD066;
+}
+
+.maintenance-options-button:hover, .sub-maintenance-options-button:hover {
+    /* color: inherit; */
+    color: #1026CB;
+    background-color: transparent;
+    border-color: #1026CB;
+}
+
+.logo {
+    position: absolute;
+    top: 200px;
+    left: 800px;
+}
+
+.logo img {
+    width: 150%;
+}
+
+/* Trip Form  */
+
+fieldset {
+    display: block;
+}
+
+legend {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+input {
+    display: block;
+}
+
+.text-input {
+    border: .5px solid black;
+}
+
+.formText {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+.button-add-future-maintenance {
+    display: block;
+}
+
+
+.tripForm {
+    border-radius: 10px;
+    margin-top: 150px;
+    padding: 20px;
+    /* padding: 1em; */
+    background: rgba(44, 62, 80, 0.7);
+    /* background: #f9f9f9; */
+    border: 1px solid #c1c1c1;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding: 1em; */
+}
+
+.tripForm input {
+    margin-bottom: 1rem;
+    /* background: #fff;
+    border: 1px solid #9c9c9c; */
+    padding: 0.7em;
+}
+
+.tripForm button {
+    background: lightgrey;
+    padding: 0.7em;
+    border: 0;
+}
+
+.tripForm button:hover {
+    background: gold;
+}
+
+label {
+    display: block;
+    padding: 0.5em 1.5em 0.5em 0;
+}
+
+.tripForm input:focus {
+    outline: 3px solid gold;
+}
+
+
+.hidden {
+    display: none
+}
+
+#message {
+    font-family: 'Lato', sans-serif;
+    padding-top: 120px;
+    padding-left: 30px;
+    font-size: 35px;
+    color: red;
+}
+
+/* Trip Cards  */
+
+section ul {
+    list-style: none;
+    padding: 100px 50px;
+    /* padding: 0; */
+    margin: 0;
+}
+
+section ul li {
+    padding: 10px;
+    max-width: 500px;
+}
+
+#cards {
+    flex-wrap: wrap;
+    display: flex;
+    list-style: none;
+}
+
+.cards__item {
+    padding: 15px;
+    flex: 1;
+}
+
+.card {
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.932);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .30);
+    transition: all 300ms cubic-bezier(.02, .01, .47, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .16);
+    transform: translate(0, -5px);
+    transition-delay: 0s !important;
+}
+
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.card__title {
+    height: 40px;
+    font-size: 15px;
+    font-family: 'Arvo', serif;
+    /* font-weight: bolder; */
+    color: #333333;
+    text-transform: uppercase;
+}
+
+.card__text {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    color: #4B4F56;
+}
+
+li p {
+    margin: 5px;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 42px;
+    color: #333;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.edit-button {
+    margin: 5px 0px 10px 0px;
+    width: 100%;
+}
+
+.edit-button:hover {
+    cursor: pointer;
+    color: inherit;
+    background-color: transparent;
+    border-color: inherit;
+    border-radius: 5px;
+   
+}
+
+.delete-button:hover {
+    border-radius: 5px;
+    cursor: pointer;
+    color: inherit;
+    background-color: transparent;
+    border-color: inherit;
+}
