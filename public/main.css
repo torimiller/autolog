@@ -236,7 +236,7 @@ a {
 }
 
 a:hover {
-    color: skyblue;
+    color: #4CD066;
 }
 
 .container {
@@ -301,6 +301,13 @@ nav ul li a:active {
     color: black;
 }
 
+.go-back {
+    font-size: 40px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    cursor: pointer;
+}
+
 
 .pageintro {
     padding: 150px 0 130px 50px;
@@ -308,7 +315,7 @@ nav ul li a:active {
 
 .pageintro section {
     display: block;
-    max-width: 45%;
+    max-width: 80%;
     word-wrap: break-word;
     margin-left: 70px;
 }
@@ -322,21 +329,34 @@ nav ul li a:active {
 }
 
 .maintenanceType, .subMaintenanceH2 {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    text-transform: uppercase;
 }
 
-.pageintro p:first-of-type {
+/* .pageintro p:first-of-type {
     margin-bottom: 30px;
 }
 
 .pageintro p:last-of-type {
     text-transform: uppercase;
+} */
+
+.maintenance-options-buttons-container {
+    margin-top: 50px;
+}
+
+.row {
+    float: left;
+    margin-right: 10px;
 }
 
 .maintenance-options-button, .sub-maintenance-options-button {
-    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
     margin-top: 10px;
     display: inline-block;
     padding: 8px 18px 10px;
@@ -345,6 +365,12 @@ nav ul li a:active {
     color: #FFFFFF;
     background-color: #4CD066;
     border-color: #4CD066;
+    width: 200px;
+    height: 100px;
+}
+
+.sub-maintenance-options-button {
+    font-size: 20px;
 }
 
 .maintenance-options-button:hover, .sub-maintenance-options-button:hover {

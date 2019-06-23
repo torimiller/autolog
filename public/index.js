@@ -116,8 +116,8 @@ function hideAllSubMaintenance() {
 
 function handleClickMaintenanceFluid() {
     $('.maintenance-options-buttons-container').on('click', '.fluids-button', event => {
-        $('.fa-arrow-left').show();
         $('.sub-maintenance-options-buttons-container').show();
+        $('.go-back').show();
         $('.sub-maintenance-fluids').show();
         $('.maintenance-options-buttons-container').hide();
     });
@@ -126,9 +126,9 @@ function handleClickMaintenanceFluid() {
 
 // MAINTENANCE OPTIONS BACK BUTTON
 function handleBackButtonClick() {
-    $('.fa-arrow-left').click(event => {
-        $('.fa-arrow-left').hide();
-        $('.h1Maintenance').attr('style', 'margin-top:20px');
+    $('.go-back').click(event => {
+        $('.go-back').hide();
+        //$('.h1Maintenance').attr('style', 'margin-top:20px');
         $('.sub-maintenance-options-buttons-container').hide();
         $('.maintenance-options-buttons-container').show();
     })
@@ -156,7 +156,7 @@ function handleClickSubMaintenanceFluid() {
     $('.sub-maintenance-options-buttons-container').on('click', '.fluid-details-button', event => {
         let clickedItem = $(event.target).text();
         $('.intro-heading').text('Schedule Future Maintenance');
-        $('.fa-arrow-left').hide();
+        $('.go-back').hide();
         $('.sub-maintenance-fluids').hide();
         $('.sub-maintenance-options-buttons-container').append(`
             <h2 class="subMaintenanceH2"><span class="maintenanceItem">Fluids</span>: <span class="clickedItem">${clickedItem}</span></h2>
@@ -177,7 +177,7 @@ function handleClickSubMaintenanceFluid() {
 
 function handleClickCancelSubFluid() {
     $('.sub-maintenance-options-buttons-container').on('click', '.button-cancel-future-fluid', event => {
-        $('.fa-arrow-left').show();
+        $('.go-back').show();
         $('.intro-heading').text('Maintenance Options');
         $('.sub-maintenance-fluids').show();
         $('.subMaintenanceH2').remove();
