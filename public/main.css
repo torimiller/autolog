@@ -330,7 +330,7 @@ nav ul li a:active {
 
 .maintenanceType, .subMaintenanceH2 {
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 40px;
@@ -367,6 +367,7 @@ nav ul li a:active {
     border-color: #4CD066;
     width: 200px;
     height: 100px;
+    border-radius: 5px;
 }
 
 .sub-maintenance-options-button {
@@ -390,15 +391,38 @@ nav ul li a:active {
     width: 150%;
 }
 
-/* Trip Form  */
+/* Schedule Maintenance Form  */
+
+.scheduledMaintenanceForm {
+    width: 50%;
+    /* margin: 0px auto; */
+    border: none;
+    color: white;
+    background-color: #1E5128;
+    -webkit-box-shadow: 0px 6px 10px -3px rgba(156,156,156,1);
+    -moz-box-shadow: 0px 6px 10px -3px rgba(156,156,156,1);
+    box-shadow: 0px 6px 10px -3px rgba(156,156,156,1);
+}
 
 fieldset {
     display: block;
+    /* text-align: center; */
+    border: none;
 }
 
 legend {
     font-size: 18px;
     margin-bottom: 15px;
+}
+
+#future-date-label, #notes-label {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.future-date {
+    margin-top: 0px;
 }
 
 input {
@@ -419,25 +443,20 @@ input {
 }
 
 
-.tripForm {
+/* .tripForm {
     border-radius: 10px;
     margin-top: 150px;
     padding: 20px;
-    /* padding: 1em; */
     background: rgba(44, 62, 80, 0.7);
-    /* background: #f9f9f9; */
     border: 1px solid #c1c1c1;
     margin-top: 2rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    /* padding: 1em; */
 }
 
 .tripForm input {
     margin-bottom: 1rem;
-    /* background: #fff;
-    border: 1px solid #9c9c9c; */
     padding: 0.7em;
 }
 
@@ -449,16 +468,16 @@ input {
 
 .tripForm button:hover {
     background: gold;
-}
+} */
 
 label {
     display: block;
     padding: 0.5em 1.5em 0.5em 0;
 }
 
-.tripForm input:focus {
+/* .tripForm input:focus {
     outline: 3px solid gold;
-}
+} */
 
 
 .hidden {
@@ -473,21 +492,39 @@ label {
     color: red;
 }
 
-/* Trip Cards  */
+/* Scheduled & Completed Maintenance */
+
+.headerContainer {
+    padding: 150px 0 0px 50px;
+}
+
+.headerContainer section {
+    display: block;
+    max-width: 80%;
+    word-wrap: break-word;
+    margin-left: 70px;
+}
 
 section ul {
     list-style: none;
-    padding: 100px 50px;
-    /* padding: 0; */
+    padding: 30px 50px 100px 50px;
+    /* padding: 100px 50px; */
     margin: 0;
 }
 
 section ul li {
     padding: 10px;
+    min-width: 300px;
     max-width: 500px;
 }
 
-#cards {
+#scheduledCards {
+    flex-wrap: wrap;
+    display: flex;
+    list-style: none;
+}
+
+#completedCards {
     flex-wrap: wrap;
     display: flex;
     list-style: none;
@@ -544,6 +581,27 @@ li p {
     margin: 5px;
 }
 
+.dateHeader, .maintenanceTypeHeader, .maintenanceNotesHeader, .completedDateHeader {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    margin-top: 20px;
+}
+
+#dateHeaderTop {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    margin-top: 5px;
+}
+
+.scheduledDate, .maintenanceResult, .subMaintenanceResult, .maintenanceNotes, .completedDate {
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
 .close {
     position: absolute;
     top: 0;
@@ -554,24 +612,56 @@ li p {
     cursor: pointer;
 }
 
-.edit-button {
-    margin: 5px 0px 10px 0px;
-    width: 100%;
+.check-completed-button, .submit-complete-button {
+    font-family: 'Arvo', serif;
+    font-size: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 8px 18px 10px;
+    border: 1px solid;
+    color: #FFFFFF;
+    background-color: #1E5128;
+    border-color: #1E5128;
+    border-radius: 5px;
 }
 
-.edit-button:hover {
+.check-completed-button, .submit-complete-button:hover {
     cursor: pointer;
-    color: inherit;
-    background-color: transparent;
-    border-color: inherit;
+    color: #FFFFFF;
+    background-color: #4CD066;
+    border-color: #4CD066;
     border-radius: 5px;
    
 }
 
-.delete-button:hover {
+.delete-button {
+    font-family: 'Arvo', serif;
+    font-size: 20px;
+    margin-top: 10px;
+    display: inline-block;
+    padding: 8px 18px 10px;
+    border: 1px solid;
+    color: #FFFFFF;
+    background-color: #06165D;
+    border-color: #06165D;
     border-radius: 5px;
+}
+
+.delete-button:hover {
     cursor: pointer;
-    color: inherit;
-    background-color: transparent;
-    border-color: inherit;
+    color: #FFFFFF;
+    background-color: #1026CB;
+    border-color: #1026CB;
+    border-radius: 5px;
+}
+
+
+/* appended form: to submit completed maintenance */
+
+.maintenance-form {
+    margin-top: 100px;
+}
+
+.maintenanceForm {
+    margin: 20px;
 }

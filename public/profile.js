@@ -1,3 +1,4 @@
+/* SCHEDULED MAINTENANCE */
 function renderMaintenanceProfile() {
     console.log('profile clicked');
     fetch('/api/futuremaintenance', {
@@ -9,26 +10,72 @@ function renderMaintenanceProfile() {
     })
         .then(response => response.json())
         .then(data => handleScheduledMaintenance(data))
-    console.log(response);
-    console.log(data);
+    //console.log(response);
+    //console.log(data);
 }
 
 function handleScheduledMaintenance(data) {
+    console.log(data);
     if (data.futuremaintenance.length <= 0) {
         $("#message").toggleClass("hidden");
     } else {
         for(let i = 0; i < data.futuremaintenance.length; i++) {
-        $('#cards').append(`
+        $('#scheduledCards').append(`
         <li role="listitem" class="cards__item">
         
               <div class="card">
-                  <div class="card__content">
-                  <h3 class="tripName">${data.futuremaintenance[i].date}</h2>
-                    <h4 class="flightInfo">Flight Info</h4>
-                    <p>Details: ${data.futuremaintenance[i].details}</p>
-                    <p>Notes: ${data.futuremaintenance[i].notes}</p>
-                    <a class="edit-button" href="/maintenanceoptions.html?id=${data.futuremaintenance[i]._id}"><button class="edit-button">Edit Maintenance</button></a>
+                <div class="card__content">
+                    <p id="dateHeaderTop">To be Completed On:</p>
+                    <p class="scheduledDate">${data.futuremaintenance[i].date}</p>
+                    <p class="maintenanceTypeHeader">Type of Maintenance:</p>
+                    <p class="subMaintenanceResult">${data.futuremaintenance[i].details}</p>
+                    <p class="maintenanceNotesHeader">Notes:</p>
+                    <p class="maintenanceNotes">${data.futuremaintenance[i].notes}</p>
+                    <a href="/submitmaintenance.html?id=${data.futuremaintenance[i]._id}"><button class="check-completed-button">Mark as Completed</button><a>
                     <button class="delete-button" id="${data.futuremaintenance[i]._id}">Delete Maintenance</button>
+                  </div>
+                <div/>
+        
+            </li>
+        `);
+        console.log('handleScheduledMaintenance function ran');
+        }
+    }
+}
+
+
+/* COMPLETED MAINTENANCE */
+function renderCompletedMaintenanceProfile() {
+    console.log('profile clicked');
+    fetch('/api/completedmaintenance', {
+        method: "Get",
+        headers: {
+            "Content-Type": "application/json",
+            authorization: "bearer " + localStorage.authToken
+        }
+    })
+        .then(response => response.json())
+        .then(data => handleCompletedMaintenance(data))
+}
+
+function handleCompletedMaintenance(data) {
+    console.log(data);
+    if (data.completedmaintenance.length <= 0) {
+        $("#message").toggleClass("hidden");
+    } else {
+        for(let i = 0; i < data.completedmaintenance.length; i++) {
+        $('#completedCards').append(`
+        <li role="listitem" class="cards__item">
+        
+              <div class="card">
+                <div class="card__content">
+                    <p class="completedDateHeader">Completed On:</p>
+                    <p class="completedDate">${data.completedmaintenance[i].date}</p>
+                    <p class="maintenanceTypeHeader">Type of Maintenance:</p>
+                    <p class="subMaintenanceResult">${data.completedmaintenance[i].details}</p>
+                    <p class="maintenanceNotesHeader">Notes:</p>
+                    <p class="maintenanceNotes">${data.completedmaintenance[i].notes}</p>
+                    <button class="delete-button" id="${data.completedmaintenance[i]._id}">Delete Maintenance</button>
                   </div>
                 <div/>
         
@@ -37,6 +84,12 @@ function handleScheduledMaintenance(data) {
         }
     }
 }
+
+
+
+
+
+
 
 // function renderProfile() {
 //     console.log('profile clicked');
@@ -106,6 +159,7 @@ function deleteTrip() {
 
 function handleProfile() {
     renderMaintenanceProfile();
+    renderCompletedMaintenanceProfile();
     //renderProfile();
     deleteTrip();
 }

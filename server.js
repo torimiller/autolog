@@ -19,6 +19,7 @@ app.use(jsonParser);
 // imports 
 const {router: tripRouter} = require('./trips/routes');
 const {router: futureMaintenanceRouter} = require('./futuremaintenance/routes');
+const {router: completedMaintenanceRouter} = require('./completedmaintenance/routes');
 const { router: usersRouter } = require('./users/routes');
 const {localStrategy, jwtStrategy } = require('./auth/Strategies');
 const {router: authRouter} = require('./auth/routes');
@@ -49,6 +50,7 @@ app.use(express.static("public"));
 
 app.use('/api/trips', jwtAuth, tripRouter);
 app.use('/api/futuremaintenance', jwtAuth, futureMaintenanceRouter);
+app.use('/api/completedmaintenance', jwtAuth, completedMaintenanceRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/auth', authRouter);
 

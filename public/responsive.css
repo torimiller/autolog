@@ -1,3 +1,4 @@
+/* Mobile */
 @media only screen and (max-width: 450px) {
     .logo {
         display: none;
@@ -35,7 +36,7 @@
 
 }
 
-
+/* Desktop */
 @media (min-width: 350px) {
     .tripForm {
         overflow: hidden;
@@ -44,7 +45,7 @@
 
     label {
         /* float: left; */
-        width: 200px;
+        /* width: 200px; */
     }
 
     .tripForm input {
