@@ -1,6 +1,5 @@
 'use strict'
 
-let tripId
 let futureMaintenanceId
 let completedMaintenanceId
 function watchlandingPage() {
@@ -106,7 +105,6 @@ function watchRegisterForm() {
 
 //MAINTENANCE OPTIONS
 function hideAllSubMaintenance() {
-    $('.h1Maintenance').attr('style', 'margin-top:-25px');
     $('.sub-maintenance-fluids').hide();
     $('.sub-maintenance-filters').hide();
     $('.sub-maintenance-tires').hide();
@@ -124,13 +122,58 @@ function handleClickMaintenanceFluid() {
     });
 }
 
+function handleClickMaintenanceFilter() {
+    $('.maintenance-options-buttons-container').on('click', '.filters-button', event => {
+        $('.sub-maintenance-options-buttons-container').show();
+        $('.go-back').show();
+        $('.sub-maintenance-filters').show();
+        $('.maintenance-options-buttons-container').hide();
+    });
+}
+
+function handleClickMaintenanceTire() {
+    $('.maintenance-options-buttons-container').on('click', '.tires-button', event => {
+        $('.sub-maintenance-options-buttons-container').show();
+        $('.go-back').show();
+        $('.sub-maintenance-tires').show();
+        $('.maintenance-options-buttons-container').hide();
+    });
+}
+
+function handleClickMaintenanceLights() {
+    $('.maintenance-options-buttons-container').on('click', '.lights-button', event => {
+        $('.sub-maintenance-options-buttons-container').show();
+        $('.go-back').show();
+        $('.sub-maintenance-lights').show();
+        $('.maintenance-options-buttons-container').hide();
+    });
+}
+
+function handleClickMaintenanceCleaning() {
+    $('.maintenance-options-buttons-container').on('click', '.cleaning-button', event => {
+        $('.sub-maintenance-options-buttons-container').show();
+        $('.go-back').show();
+        $('.sub-maintenance-cleaning').show();
+        $('.maintenance-options-buttons-container').hide();
+    });
+}
+
+function handleClickMaintenanceOil() {
+    $('.maintenance-options-buttons-container').on('click', '.oil-button', event => {
+        $('.sub-maintenance-options-buttons-container').show();
+        $('.go-back').show();
+        $('.sub-maintenance-oil').show();
+        $('.maintenance-options-buttons-container').hide();
+    });
+}
+
 
 // MAINTENANCE OPTIONS BACK BUTTON
 function handleBackButtonClick() {
     $('.go-back').click(event => {
         $('.go-back').hide();
-        //$('.h1Maintenance').attr('style', 'margin-top:20px');
-        $('.sub-maintenance-options-buttons-container').hide();
+        hideAllSubMaintenance();
+        //$('.sub-maintenance-options-buttons-container').hide();
         $('.maintenance-options-buttons-container').show();
     })
 }
@@ -188,6 +231,182 @@ function handleClickCancelSubFluid() {
     });    
 }
 
+function handleClickSubMaintenanceFilter() {
+    $('.sub-maintenance-options-buttons-container').on('click', '.filters-details-button', event => {
+        let clickedItem = $(event.target).text();
+        $('.intro-heading').text('Schedule Future Maintenance');
+        $('.go-back').hide();
+        $('.sub-maintenance-filters').hide();
+        $('.sub-maintenance-options-buttons-container').append(`
+            <h2 class="subMaintenanceH2"><span class="maintenanceItem">Filters</span>: <span class="clickedItem">${clickedItem}</span></h2>
+            <div class="subMaintenanceForm">
+                <form role="form" class="scheduledMaintenanceForm" action="">
+                    <fieldset>
+                    ${generateFutureDate()}
+                    <br>
+                    ${generateNotesField()}
+                    <button class="button-add-future-maintenance" type="submit">Schedule Future Maintenance</button>
+                    <button class="button-cancel-future-filter" type="submit">Cancel</button>
+                    </fieldset>
+                </form>
+            </div>
+        `);
+    });
+}
+
+function handleClickCancelSubFilter() {
+    $('.sub-maintenance-options-buttons-container').on('click', '.button-cancel-future-filter', event => {
+        $('.go-back').show();
+        $('.intro-heading').text('Maintenance Options');
+        $('.sub-maintenance-filters').show();
+        $('.subMaintenanceH2').remove();
+        $('.subMaintenanceForm').remove();
+        $('.button-add-future-maintenance').remove();
+        $('.button-cancel-future-filter').remove();
+    });    
+}
+
+function handleClickSubMaintenanceTire() {
+    $('.sub-maintenance-options-buttons-container').on('click', '.tire-details-button', event => {
+        let clickedItem = $(event.target).text();
+        $('.intro-heading').text('Schedule Future Maintenance');
+        $('.go-back').hide();
+        $('.sub-maintenance-tires').hide();
+        $('.sub-maintenance-options-buttons-container').append(`
+            <h2 class="subMaintenanceH2"><span class="maintenanceItem">Tires</span>: <span class="clickedItem">${clickedItem}</span></h2>
+            <div class="subMaintenanceForm">
+                <form role="form" class="scheduledMaintenanceForm" action="">
+                    <fieldset>
+                    ${generateFutureDate()}
+                    <br>
+                    ${generateNotesField()}
+                    <button class="button-add-future-maintenance" type="submit">Schedule Future Maintenance</button>
+                    <button class="button-cancel-future-tire" type="submit">Cancel</button>
+                    </fieldset>
+                </form>
+            </div>
+        `);
+    });
+}
+
+function handleClickCancelSubTire() {
+    $('.sub-maintenance-options-buttons-container').on('click', '.button-cancel-future-tire', event => {
+        $('.go-back').show();
+        $('.intro-heading').text('Maintenance Options');
+        $('.sub-maintenance-tires').show();
+        $('.subMaintenanceH2').remove();
+        $('.subMaintenanceForm').remove();
+        $('.button-add-future-maintenance').remove();
+        $('.button-cancel-future-tire').remove();
+    });    
+}
+
+function handleClickSubMaintenanceLights() {
+    $('.sub-maintenance-options-buttons-container').on('click', '.lights-details-button', event => {
+        let clickedItem = $(event.target).text();
+        $('.intro-heading').text('Schedule Future Maintenance');
+        $('.go-back').hide();
+        $('.sub-maintenance-lights').hide();
+        $('.sub-maintenance-options-buttons-container').append(`
+            <h2 class="subMaintenanceH2"><span class="maintenanceItem">Lights</span>: <span class="clickedItem">${clickedItem}</span></h2>
+            <div class="subMaintenanceForm">
+                <form role="form" class="scheduledMaintenanceForm" action="">
+                    <fieldset>
+                    ${generateFutureDate()}
+                    <br>
+                    ${generateNotesField()}
+                    <button class="button-add-future-maintenance" type="submit">Schedule Future Maintenance</button>
+                    <button class="button-cancel-future-lights" type="submit">Cancel</button>
+                    </fieldset>
+                </form>
+            </div>
+        `);
+    });
+}
+
+function handleClickCancelSubLights() {
+    $('.sub-maintenance-options-buttons-container').on('click', '.button-cancel-future-lights', event => {
+        $('.go-back').show();
+        $('.intro-heading').text('Maintenance Options');
+        $('.sub-maintenance-lights').show();
+        $('.subMaintenanceH2').remove();
+        $('.subMaintenanceForm').remove();
+        $('.button-add-future-maintenance').remove();
+        $('.button-cancel-future-lights').remove();
+    });    
+}
+
+function handleClickSubMaintenanceCleaning() {
+    $('.sub-maintenance-options-buttons-container').on('click', '.cleaning-details-button', event => {
+        let clickedItem = $(event.target).text();
+        $('.intro-heading').text('Schedule Future Maintenance');
+        $('.go-back').hide();
+        $('.sub-maintenance-cleaning').hide();
+        $('.sub-maintenance-options-buttons-container').append(`
+            <h2 class="subMaintenanceH2"><span class="maintenanceItem">Cleaning</span>: <span class="clickedItem">${clickedItem}</span></h2>
+            <div class="subMaintenanceForm">
+                <form role="form" class="scheduledMaintenanceForm" action="">
+                    <fieldset>
+                    ${generateFutureDate()}
+                    <br>
+                    ${generateNotesField()}
+                    <button class="button-add-future-maintenance" type="submit">Schedule Future Maintenance</button>
+                    <button class="button-cancel-future-cleaning" type="submit">Cancel</button>
+                    </fieldset>
+                </form>
+            </div>
+        `);
+    });
+}
+
+function handleClickCancelSubCleaning() {
+    $('.sub-maintenance-options-buttons-container').on('click', '.button-cancel-future-cleaning', event => {
+        $('.go-back').show();
+        $('.intro-heading').text('Maintenance Options');
+        $('.sub-maintenance-cleaning').show();
+        $('.subMaintenanceH2').remove();
+        $('.subMaintenanceForm').remove();
+        $('.button-add-future-maintenance').remove();
+        $('.button-cancel-future-cleaning').remove();
+    });    
+}
+
+function handleClickSubMaintenanceOil() {
+    $('.sub-maintenance-options-buttons-container').on('click', '.oil-details-button', event => {
+        let clickedItem = $(event.target).text();
+        $('.intro-heading').text('Schedule Future Maintenance');
+        $('.go-back').hide();
+        $('.sub-maintenance-oil').hide();
+        $('.sub-maintenance-options-buttons-container').append(`
+            <h2 class="subMaintenanceH2"><span class="maintenanceItem">Oil</span>: <span class="clickedItem">${clickedItem}</span></h2>
+            <div class="subMaintenanceForm">
+                <form role="form" class="scheduledMaintenanceForm" action="">
+                    <fieldset>
+                    ${generateFutureDate()}
+                    <br>
+                    ${generateNotesField()}
+                    <button class="button-add-future-maintenance" type="submit">Schedule Future Maintenance</button>
+                    <button class="button-cancel-future-oil" type="submit">Cancel</button>
+                    </fieldset>
+                </form>
+            </div>
+        `);
+    });
+}
+
+function handleClickCancelSubOil() {
+    $('.sub-maintenance-options-buttons-container').on('click', '.button-cancel-future-oil', event => {
+        $('.go-back').show();
+        $('.intro-heading').text('Maintenance Options');
+        $('.sub-maintenance-oil').show();
+        $('.subMaintenanceH2').remove();
+        $('.subMaintenanceForm').remove();
+        $('.button-add-future-maintenance').remove();
+        $('.button-cancel-future-oil').remove();
+    });    
+}
+
+
 
 /* SUBMIT FUTURE MAINTENANCE */
 function submitFutureMaintenance() {
@@ -207,10 +426,11 @@ function submitFutureMaintenance() {
             details,
             notes
         }
-        console.log(futureObj);
 
        if (futureMaintenanceId) {
         futureObj.id = futureMaintenanceId
+        console.log('submitFutureMaintenance ran');
+        console.log(futureMaintenanceId);
         fetch(`/api/futuremaintenance/${futureMaintenanceId}`, {
                 method: "put",
                 headers: {
@@ -258,13 +478,9 @@ function loadFutureMaintenanceById() {
         $('.logo').hide();
         $('.pageintro').hide();
         $('.maintenance-form').show();
-        console.log('maintenance form appears');
         $('.future-date').val(futuremaintenance.date);
         $('.clickedItem').text(futuremaintenance.details);
         $('.notes-textarea').val(futuremaintenance.notes);
-        console.log(futuremaintenance.date);
-        console.log(futuremaintenance.details);
-        console.log(futuremaintenance.notes);
         $('.maintenance-form').append(`
             <form class="maintenanceForm" action="">
 
@@ -278,9 +494,10 @@ function loadFutureMaintenanceById() {
             <label for="notes">Notes</label>
             <input  class="notes-input" class="notes-textarea" type="text" value="${futuremaintenance.notes}">
 
-            <button class="submit-complete-button" type="submit">Mark as Completed</button>
+            <button class="submit-complete-button" type="submit">Maintenance Complete</button><br>
+            <a href="/profile.html" class="cancel-completed-button">Cancel</a>
 
-    </form>
+            </form>
         `)
         console.log('form has been appended to section');
     })
@@ -288,12 +505,12 @@ function loadFutureMaintenanceById() {
 }
 
 
-
 /* SUBMIT COMPLETED MAINTENANCE */
 
 function submitCompletedMaintenance() {
     $('body').on('submit', '.maintenanceForm', event => {
         event.preventDefault();
+        const id= futureMaintenanceId;
         const date = $('.maintenanceForm').find('.date-input').val();
         console.log(date);
         debugger;
@@ -332,35 +549,42 @@ function submitCompletedMaintenance() {
                 .then(response => response.json())
                 .then(() => window.location = "completed.html")
             }
+        fetch(`/api/futuremaintenance/${id}`, {
+            method: "delete",
+            headers: {
+                "Content-Type": "application/json",
+                authorization: "bearer " + localStorage.authToken
+            }
+        })
     });
 }
 
-function loadCompletedeMaintenanceById() {
-    const split = window.location.href.split("=") 
-    if (split.length == 1) {
-        return 
-    }
-    const id = split[1]
-    completedMaintenanceId = id;
-    console.log(id);
-    fetch(`/api/completedmaintenance/${id}`, {
-        method: "get",
-        headers: {
-            "Content-Type": "application/json",
-            authorization: "bearer " + localStorage.authToken
-        }
-    })
-    .then(response => response.json())
-    // .then(completemaintenanceevent => {
-    //     $('.scheduledDate').text(completemaintenanceevent.date);
-    //     $('.subMaintenanceResult').text(completemaintenanceevent.details);
-    //     $('.maintenanceNotes').text(completedmaintenanceevent.notes);
-    //     console.log(completedmaintenanceevent.date);
-    //     console.log(completedmaintenanceevent.details);
-    //     console.log(completedmaintenanceevent.notes);
-    //     console.log('load completed maintenance by ID ran');
-    // })
-}
+// function loadCompletedeMaintenanceById() {
+//     const split = window.location.href.split("=") 
+//     if (split.length == 1) {
+//         return 
+//     }
+//     const id = split[1]
+//     completedMaintenanceId = id;
+//     console.log(id);
+//     fetch(`/api/completedmaintenance/${id}`, {
+//         method: "get",
+//         headers: {
+//             "Content-Type": "application/json",
+//             authorization: "bearer " + localStorage.authToken
+//         }
+//     })
+//     .then(response => response.json())
+//     // .then(completemaintenanceevent => {
+//     //     $('.scheduledDate').text(completemaintenanceevent.date);
+//     //     $('.subMaintenanceResult').text(completemaintenanceevent.details);
+//     //     $('.maintenanceNotes').text(completedmaintenanceevent.notes);
+//     //     console.log(completedmaintenanceevent.date);
+//     //     console.log(completedmaintenanceevent.details);
+//     //     console.log(completedmaintenanceevent.notes);
+//     //     console.log('load completed maintenance by ID ran');
+//     // })
+// }
 
 
 // function submitCompletedMaintenance() {
@@ -438,160 +662,41 @@ function loadCompletedeMaintenanceById() {
 
 
 
-// function addNewtrip() {
-//     $('.trip-button').click(function (event) {
-//         console.log("clicked");
-//         $('.pageintro').hide();
-//         $('.logo').hide();
-//         $('.trip-form').show();
-//     });
-// }
-
-// function submitTrip() {
-//     $('body').on('submit', '.tripForm', event => {
-//         event.preventDefault();
-//         console.log('submit');
-//         const tripName = $('#tripName').val();
-//         const boarding = $('#boarding').val();
-//         const departure = $('#departure').val();
-//         const arrival = $('#arival').val();
-//         const terminal = $('#terminal').val();
-//         const gate = $('#gate').val();
-//         const hotelName = $('#hotelName').val();
-//         const building = $('#building').val();
-//         const street = $('#street').val();
-//         const zipcode = $('#zipcode').val();
-//         const checkIn = $('#check-in').val();
-//         const checkOut = $('#check-out').val();
-//         const carRental = $('#carRental-name').val();
-//         const confirmation = $('#confirmation').val();
-//         const activeName = $('#activeName').val();
-//         const activeDate = $('#activeDate').val();
-//         const activeTime = $('#activeTime').val();
-//         const tripObj = {
-//             tripName,
-//             flightInfo: {
-//                 boarding,
-//                 departure,
-//                 arrival,
-//                 terminal,
-//                 gate
-//             },
-//             hotelInfo: {
-//                 name: hotelName,
-//                 address: {
-//                     building,
-//                     street,
-//                     zipcode
-//                 },
-//                 checkIn,
-//                 checkOut
-//             },
-//             carRental: {
-//                 name: carRental,
-//                 confNumber: confirmation
-//             },
-//             activities: [{
-//                 name: activeName,
-//                 date: activeDate,
-//                 time: activeTime
-//             }]
-//         }
-
-//        if (tripId) {
-//         tripObj.id = tripId
-//         fetch(`/api/trips/${tripId}`, {
-//                 method: "put",
-//                 headers: {
-//                     "Content-Type": "application/json",
-//                     authorization: "bearer " + localStorage.authToken
-//                 },
-//                 body: JSON.stringify(tripObj)
-//             })
-//             .then(() => window.location = "profile.html")
-//         }
-//         else {
-//             fetch('/api/trips', {
-//                 method: "post",
-//                 headers: {
-//                     "Content-Type": "application/json",
-//                     authorization: "bearer " + localStorage.authToken
-//                 },
-//                 body: JSON.stringify(tripObj)
-//             })
-//             .then(response => response.json())
-//             .then(() => window.location = "profile.html")
-//         }
-//     });
-// }
-
-// function loadTripById() {
-//     const split = window.location.href.split("=") 
-//     if (split.length == 1) {
-//         return 
-//     }
-//     const id = split[1]
-//     tripId = id;
-//     console.log(id);
-//     fetch(`/api/trips/${id}`, {
-//         method: "get",
-//         headers: {
-//             "Content-Type": "application/json",
-//             authorization: "bearer " + localStorage.authToken
-//         }
-//     })
-//     .then(response => response.json())
-//     .then(trip => {
-//         $('.logo').hide();
-//         $('.pageintro').hide();
-//         $('.trip-form').show();
-//         $('#tripName').val(trip.tripName);
-//         $('#boarding').val(trip.flightInfo.boarding);
-//         $('#departure').val(trip.flightInfo.departure);
-//         $('#arival').val(trip.flightInfo.arrival);
-//         $('#terminal').val(trip.flightInfo.terminal);
-//         $('#gate').val(trip.flightInfo.gate);
-//         $('#hotelName').val(trip.hotelInfo.name);
-//         $('#building').val(trip.hotelInfo.address.building);
-//         $('#street').val(trip.hotelInfo.address.street);
-//         $('#zipcode').val(trip.hotelInfo.address.zipcode);
-//         $('#check-in').val(trip.hotelInfo.checkIn);
-//         $('#check-out').val(trip.hotelInfo.checkOut);
-//         $('#carRental-name').val(trip.carRental.name);
-//         $('#confirmation').val(trip.carRental.confNumber);
-//         // const activeName = $('#activeName').val();
-//         // const activeDate = $('#activeDate').val();
-//         // const activeTime = $('#activeTime').val();
-//     })
-// }
-
 function handleMaintenance() {
     handleClickMaintenanceFluid();
-    // handleClickMaintenanceFilter();
-    // handleClickMaintenanceTire();
-    // handleClickMaintenanceLights();
-    // handleClickMaintenanceCleaning();
-    // handleClickMaintenanceOil();
+    handleClickMaintenanceFilter();
+    handleClickMaintenanceTire();
+    handleClickMaintenanceLights();
+    handleClickMaintenanceCleaning();
+    handleClickMaintenanceOil();
 }
 
 function handleSubMaintenance() {
     handleClickSubMaintenanceFluid();
     handleClickCancelSubFluid();
+    handleClickSubMaintenanceFilter();
+    handleClickCancelSubFilter();
+    handleClickSubMaintenanceTire();
+    handleClickCancelSubTire();
+    handleClickSubMaintenanceLights();
+    handleClickCancelSubLights();
+    handleClickSubMaintenanceCleaning();
+    handleClickCancelSubCleaning();
+    handleClickSubMaintenanceOil();
+    handleClickCancelSubOil();
+    
 }
 
 
 function handleApp() {
     watchRegisterForm();
     watchLoginForm();
-    //addNewtrip();
     watchlandingPage();
     handleBackButtonClick();
     handleMaintenance();
     handleSubMaintenance();
-    //submitTrip();
     submitFutureMaintenance();
     submitCompletedMaintenance();
-    //loadTripById();
     loadFutureMaintenanceById();
     //loadCompletedeMaintenanceById();
 }
