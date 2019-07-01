@@ -111,9 +111,11 @@ body {
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
+    width: 200px;
 }
 
 .header-button span {
+    color: black;
     cursor: pointer;
     display: inline-block;
     position: relative;
@@ -139,7 +141,7 @@ body {
 }
 
 .demo-text {
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 10px;
     font-family: 'Lato', serif;
     color: white;
@@ -160,7 +162,8 @@ body {
     padding: 40px;
     width: auto;
     margin: auto;
-    margin-top: 90px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     /* height: 400px; */
     height: auto;
     margin-left: 180x;
@@ -168,10 +171,27 @@ body {
 
 }
 
+#haveAcctText {
+    margin-bottom: 0px;
+    font-family: 'Lato', serif;
+    color: white;
+}
+
+#haveAcctText a {
+    color: #4CD066;
+    font-family: 'Lato', serif;
+    font-weight: 900;
+}
+
 .signin-form,
 .register-form {
     width: 240px;
     text-align: center;
+}
+
+.register-form h2, .signin-form h2 {
+    font-family: 'Arvo', serif;
+    color: #4CD066;
 }
 
 .form-input {
@@ -232,6 +252,7 @@ body {
     padding: 10px 0;
     border-radius: 15px;
     cursor: pointer;
+    margin: 0px auto;
 }
 
 .register-button:hover {
@@ -363,6 +384,10 @@ nav ul li a:active {
     margin-right: 10px;
 }
 
+.button-add-future-maintenance {
+    display: block;
+}
+
 .maintenance-options-button, .sub-maintenance-options-button {
     font-family: 'Lato', sans-serif;
     font-size: 30px;
@@ -390,6 +415,31 @@ nav ul li a:active {
     border-color: #1026CB;
 }
 
+.button-schedule-future-maintenance, .button-cancel-scheduled {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    margin-top: 30px;
+    display: block;
+    padding: 8px 18px 10px;
+    border: 1px solid;
+    color: #06165D;
+    background-color: lightgrey;
+    border-color: lightgrey;
+    border-radius: 3px;
+}
+
+.button-schedule-future-maintenance:hover, .button-cancel-scheduled:hover {
+    color: #1026CB;
+    font-weight: 900;
+    background-color: white;;
+    border-color: white;
+}
+
+.button-cancel-scheduled, .button-cancel-scheduled:hover {
+    margin-top: 15px;
+}
+
 .logo {
     position: absolute;
     top: 200px;
@@ -415,7 +465,6 @@ nav ul li a:active {
 
 fieldset {
     display: block;
-    /* text-align: center; */
     border: none;
 }
 
@@ -428,6 +477,8 @@ legend {
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
     font-size: 20px;
+    padding-bottom: 0px;
+    
 }
 
 .future-date {
@@ -445,11 +496,9 @@ input {
 .formText {
         font-size: 20px;
         font-weight: bold;
+        font-family: 'Lato', sans-serif;
     }
 
-.button-add-future-maintenance {
-    display: block;
-}
 
 
 /* .tripForm {
@@ -554,6 +603,8 @@ section ul li {
     flex-direction: column;
     overflow: hidden;
     margin-bottom: 10px;
+    min-width: 300px;
+    max-width: 400px;
 }
 
 .card:hover {
@@ -632,6 +683,8 @@ li p {
     background-color: #1E5128;
     border-color: #1E5128;
     border-radius: 5px;
+    width: 275px;
+    text-align: center;
 }
 
 .check-completed-button:hover, .submit-complete-button:hover {
@@ -640,6 +693,8 @@ li p {
     background-color: #4CD066;
     border-color: #4CD066;
     border-radius: 5px;
+    width: 275px;
+    text-align: center;
    
 }
 
@@ -654,6 +709,8 @@ li p {
     background-color: #06165D;
     border-color: #06165D;
     border-radius: 5px;
+    width: 275px;
+    text-align: center;
 }
 
 .delete-button:hover {
@@ -662,6 +719,8 @@ li p {
     background-color: #1026CB;
     border-color: #1026CB;
     border-radius: 5px;
+    width: 275px;
+    text-align: center;
 }
 
 .cancel-completed-button {
@@ -675,6 +734,8 @@ li p {
     background-color: #0D0D0D;
     border-color: #0D0D0D;
     border-radius: 5px;  
+    width: 275px;
+    text-align: center;
 }
 
 
@@ -686,4 +747,14 @@ li p {
 
 .maintenanceForm {
     margin: 20px;
+    margin-top: 125px;
+}
+
+.maintenance-input, .date-input {
+    width: 150px;
+}
+
+.notes-input {
+    width: 150px;
+    height: 50px;
 }

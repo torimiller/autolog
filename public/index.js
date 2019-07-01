@@ -4,21 +4,24 @@ let futureMaintenanceId
 let completedMaintenanceId
 function watchlandingPage() {
     $('#start-button').click(event => {
-        $('.header-content').hide();
-        $('main').html(`
-        <div class="signin-register">
-
-            <form class="signin-form">
-            <h2 class="header">Log In</h2>
-            <input class="form-input"id="username" type="text" name="username" placeholder="Username"/><br /><br />
-            <input class="form-input" id="password" type="password" name="password" placeholder="Password" /><br /><br />
-            <button class="login-button"type="submit">Log In</button><br /><br />
-            
-            Don't have account?<a href="/register.html" class="register" style="font-family:'Play', sans-serif;">&nbsp;Sign Up</a>
-            
-            </form>
-            </div>`);
+        window.location = 'register.html';
     });
+    // $('#start-button').click(event => {
+    //     $('.header-content').hide();
+    //     $('main').html(`
+    //     <div class="signin-register">
+
+    //         <form class="signin-form">
+    //         <h2 class="header">Log In</h2>
+    //         <input class="form-input"id="username" type="text" name="username" placeholder="Username"/><br /><br />
+    //         <input class="form-input" id="password" type="password" name="password" placeholder="Password" /><br /><br />
+    //         <button class="login-button"type="submit">Log In</button><br /><br />
+            
+    //         Don't have account?<a href="/register.html" class="register" style="font-family:'Play', sans-serif;">&nbsp;Sign Up</a>
+            
+    //         </form>
+    //         </div>`);
+    // });
 $("#demo-button").click(event => {
     fetch('/api/auth/login', {
         method: "post",
@@ -210,8 +213,8 @@ function handleClickSubMaintenanceFluid() {
                     ${generateFutureDate()}
                     <br>
                     ${generateNotesField()}
-                    <button class="button-add-future-maintenance" type="submit">Schedule Future Maintenance</button>
-                    <button class="button-cancel-future-fluid" type="submit">Cancel</button>
+                    <button class="button-schedule-future-maintenance" type="submit">Schedule Future Maintenance</button>
+                    <button class="button-cancel-future-fluid button-cancel-scheduled" type="submit">Cancel</button>
                     </fieldset>
                 </form>
             </div>
@@ -226,7 +229,7 @@ function handleClickCancelSubFluid() {
         $('.sub-maintenance-fluids').show();
         $('.subMaintenanceH2').remove();
         $('.subMaintenanceForm').remove();
-        $('.button-add-future-maintenance').remove();
+        $('.button-schedule-future-maintenance').remove();
         $('.button-cancel-future-fluid').remove();
     });    
 }
@@ -245,8 +248,8 @@ function handleClickSubMaintenanceFilter() {
                     ${generateFutureDate()}
                     <br>
                     ${generateNotesField()}
-                    <button class="button-add-future-maintenance" type="submit">Schedule Future Maintenance</button>
-                    <button class="button-cancel-future-filter" type="submit">Cancel</button>
+                    <button class="button-schedule-future-maintenance" type="submit">Schedule Future Maintenance</button>
+                    <button class="button-cancel-future-filter button-cancel-scheduled" type="submit">Cancel</button>
                     </fieldset>
                 </form>
             </div>
@@ -261,7 +264,7 @@ function handleClickCancelSubFilter() {
         $('.sub-maintenance-filters').show();
         $('.subMaintenanceH2').remove();
         $('.subMaintenanceForm').remove();
-        $('.button-add-future-maintenance').remove();
+        $('.button-schedule-future-maintenance').remove();
         $('.button-cancel-future-filter').remove();
     });    
 }
@@ -280,8 +283,8 @@ function handleClickSubMaintenanceTire() {
                     ${generateFutureDate()}
                     <br>
                     ${generateNotesField()}
-                    <button class="button-add-future-maintenance" type="submit">Schedule Future Maintenance</button>
-                    <button class="button-cancel-future-tire" type="submit">Cancel</button>
+                    <button class="button-schedule-future-maintenance" type="submit">Schedule Future Maintenance</button>
+                    <button class="button-cancel-future-tire button-cancel-scheduled" type="submit">Cancel</button>
                     </fieldset>
                 </form>
             </div>
@@ -296,7 +299,7 @@ function handleClickCancelSubTire() {
         $('.sub-maintenance-tires').show();
         $('.subMaintenanceH2').remove();
         $('.subMaintenanceForm').remove();
-        $('.button-add-future-maintenance').remove();
+        $('.button-schedule-future-maintenance').remove();
         $('.button-cancel-future-tire').remove();
     });    
 }
@@ -315,8 +318,8 @@ function handleClickSubMaintenanceLights() {
                     ${generateFutureDate()}
                     <br>
                     ${generateNotesField()}
-                    <button class="button-add-future-maintenance" type="submit">Schedule Future Maintenance</button>
-                    <button class="button-cancel-future-lights" type="submit">Cancel</button>
+                    <button class="button-schedule-future-maintenance" type="submit">Schedule Future Maintenance</button>
+                    <button class="button-cancel-future-lights button-cancel-scheduled" type="submit">Cancel</button>
                     </fieldset>
                 </form>
             </div>
@@ -331,7 +334,7 @@ function handleClickCancelSubLights() {
         $('.sub-maintenance-lights').show();
         $('.subMaintenanceH2').remove();
         $('.subMaintenanceForm').remove();
-        $('.button-add-future-maintenance').remove();
+        $('.button-schedule-future-maintenance').remove();
         $('.button-cancel-future-lights').remove();
     });    
 }
@@ -350,8 +353,8 @@ function handleClickSubMaintenanceCleaning() {
                     ${generateFutureDate()}
                     <br>
                     ${generateNotesField()}
-                    <button class="button-add-future-maintenance" type="submit">Schedule Future Maintenance</button>
-                    <button class="button-cancel-future-cleaning" type="submit">Cancel</button>
+                    <button class="button-schedule-future-maintenance" type="submit">Schedule Future Maintenance</button>
+                    <button class="button-cancel-future-cleaning button-cancel-scheduled" type="submit">Cancel</button>
                     </fieldset>
                 </form>
             </div>
@@ -366,7 +369,7 @@ function handleClickCancelSubCleaning() {
         $('.sub-maintenance-cleaning').show();
         $('.subMaintenanceH2').remove();
         $('.subMaintenanceForm').remove();
-        $('.button-add-future-maintenance').remove();
+        $('.button-schedule-future-maintenance').remove();
         $('.button-cancel-future-cleaning').remove();
     });    
 }
@@ -385,8 +388,8 @@ function handleClickSubMaintenanceOil() {
                     ${generateFutureDate()}
                     <br>
                     ${generateNotesField()}
-                    <button class="button-add-future-maintenance" type="submit">Schedule Future Maintenance</button>
-                    <button class="button-cancel-future-oil" type="submit">Cancel</button>
+                    <button class="button-schedule-future-maintenance" type="submit">Schedule Future Maintenance</button>
+                    <button class="button-cancel-future-oil button-cancel-scheduled" type="submit">Cancel</button>
                     </fieldset>
                 </form>
             </div>
@@ -401,7 +404,7 @@ function handleClickCancelSubOil() {
         $('.sub-maintenance-oil').show();
         $('.subMaintenanceH2').remove();
         $('.subMaintenanceForm').remove();
-        $('.button-add-future-maintenance').remove();
+        $('.button-schedule-future-maintenance').remove();
         $('.button-cancel-future-oil').remove();
     });    
 }

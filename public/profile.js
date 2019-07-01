@@ -101,10 +101,26 @@ function deleteScheduledMaintenance() {
     })
 }
 
+function deleteCompleteddMaintenance() {
+    $('body').on('click', '.delete-button', event => {
+        console.log("deleted");
+        const id = event.target.id
+        fetch(`/api/completedmaintenance/${id}`, {
+            method: "delete",
+            headers: {
+                "Content-Type": "application/json",
+                authorization: "bearer " + localStorage.authToken
+            }
+        })
+            .then(() => location.reload())
+    })
+}
+
 function handleProfile() {
     renderMaintenanceProfile();
     renderCompletedMaintenanceProfile();
     deleteScheduledMaintenance();
+    deleteCompleteddMaintenance();
 }
 
 $(handleProfile);
