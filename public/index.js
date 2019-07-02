@@ -13,12 +13,13 @@ $("#demo-button").click(event => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            username: "demo1",
+            username: "testuser",
             password: "demo123456"
         })
     })
     .then(response => response.json())
     .then(data => {
+        console.log(data);
         localStorage.authToken = data.authToken
         window.location = 'maintenanceoptions.html'
     })
