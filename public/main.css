@@ -20,10 +20,6 @@ main {
 main:before {
     background: linear-gradient(45deg, rgba(13, 13, 13, 0.575), rgba(6, 22, 93, 0.5)),
         url(https://i.imgur.com/6pAnv87.jpg) no-repeat bottom;
-    /* background: linear-gradient(to bottom, rgba(6, 22, 93, 0.5), rgba(13, 13, 13, 0.575)),
-        url(https://i.imgur.com/6pAnv87.jpg) no-repeat bottom; */
-    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)),
-        url(https://i.imgur.com/6pAnv87.jpg) no-repeat bottom; */
     background-size: cover;
     content: "";
     position: absolute;
@@ -57,16 +53,13 @@ body {
 }
 
 .introText {
-    /* width: 370px; */
     display: inline-block;
     font-family: 'Lato', sans-serif;
     color: white;
 }
 
 .header-text {
-    /* padding: 100px; */
     margin: 30px;
-    /* background: rgba(50, 50, 50, .6); */
 }
 
 .header-title {
@@ -164,7 +157,6 @@ body {
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
-    /* height: 400px; */
     height: auto;
     margin-left: 180x;
     border-radius: 5px;
@@ -202,22 +194,6 @@ body {
     border-bottom: 1px solid #fff;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
-    /* font-weight: 200px; */
-    padding: 10px 0;
-    transition: border 0.5s;
-    outline: none;
-    color: #fff;
-    border-radius: 5px;
-}
-
-.trippform {
-    text-align: center;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #fff;
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-    /* font-weight: 200px; */
     padding: 10px 0;
     transition: border 0.5s;
     outline: none;
@@ -281,13 +257,8 @@ a:hover {
 
 }
 
-/* Home Stylesheet */
 
-.trip-form {
-    margin-bottom: 100px;
-    margin-top: 100px;
-    display: none;
-}
+/* Home Stylesheet */
 
 nav {
     z-index: 1000;
@@ -317,8 +288,6 @@ nav ul li a {
     color: white;
     padding: 20px;
 }
-
-/* an underline appears at the bottom on hover of each link */
 
 nav ul li a:hover,
 nav ul li a:active {
@@ -367,14 +336,6 @@ nav ul li a:active {
     text-transform: uppercase;
 }
 
-/* .pageintro p:first-of-type {
-    margin-bottom: 30px;
-}
-
-.pageintro p:last-of-type {
-    text-transform: uppercase;
-} */
-
 .maintenance-options-buttons-container {
     margin-top: 50px;
 }
@@ -409,7 +370,6 @@ nav ul li a:active {
 }
 
 .maintenance-options-button:hover, .sub-maintenance-options-button:hover {
-    /* color: inherit; */
     color: #1026CB;
     background-color: transparent;
     border-color: #1026CB;
@@ -450,11 +410,11 @@ nav ul li a:active {
     width: 150%;
 }
 
+
 /* Schedule Maintenance Form  */
 
 .scheduledMaintenanceForm {
     width: 50%;
-    /* margin: 0px auto; */
     border: none;
     color: white;
     background-color: #1E5128;
@@ -500,55 +460,22 @@ input {
     }
 
 
-
-/* .tripForm {
-    border-radius: 10px;
-    margin-top: 150px;
-    padding: 20px;
-    background: rgba(44, 62, 80, 0.7);
-    border: 1px solid #c1c1c1;
-    margin-top: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.tripForm input {
-    margin-bottom: 1rem;
-    padding: 0.7em;
-}
-
-.tripForm button {
-    background: lightgrey;
-    padding: 0.7em;
-    border: 0;
-}
-
-.tripForm button:hover {
-    background: gold;
-} */
-
 label {
     display: block;
     padding: 0.5em 1.5em 0.5em 0;
 }
 
-/* .tripForm input:focus {
-    outline: 3px solid gold;
-} */
-
-
 .hidden {
-    display: none
+    display: none;
 }
 
 #message {
     font-family: 'Lato', sans-serif;
-    padding-top: 120px;
-    padding-left: 30px;
-    font-size: 35px;
+    padding-left: 10%;
+    font-size: 30px;
     color: red;
 }
+
 
 /* Scheduled & Completed Maintenance */
 
@@ -566,7 +493,6 @@ label {
 section ul {
     list-style: none;
     padding: 30px 50px 100px 50px;
-    /* padding: 100px 50px; */
     margin: 0;
 }
 
@@ -624,7 +550,6 @@ section ul li {
     height: 40px;
     font-size: 15px;
     font-family: 'Arvo', serif;
-    /* font-weight: bolder; */
     color: #333333;
     text-transform: uppercase;
 }

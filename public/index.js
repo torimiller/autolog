@@ -6,22 +6,6 @@ function watchlandingPage() {
     $('#start-button').click(event => {
         window.location = 'register.html';
     });
-    // $('#start-button').click(event => {
-    //     $('.header-content').hide();
-    //     $('main').html(`
-    //     <div class="signin-register">
-
-    //         <form class="signin-form">
-    //         <h2 class="header">Log In</h2>
-    //         <input class="form-input"id="username" type="text" name="username" placeholder="Username"/><br /><br />
-    //         <input class="form-input" id="password" type="password" name="password" placeholder="Password" /><br /><br />
-    //         <button class="login-button"type="submit">Log In</button><br /><br />
-            
-    //         Don't have account?<a href="/register.html" class="register" style="font-family:'Play', sans-serif;">&nbsp;Sign Up</a>
-            
-    //         </form>
-    //         </div>`);
-    // });
 $("#demo-button").click(event => {
     fetch('/api/auth/login', {
         method: "post",
@@ -562,108 +546,6 @@ function submitCompletedMaintenance() {
     });
 }
 
-// function loadCompletedeMaintenanceById() {
-//     const split = window.location.href.split("=") 
-//     if (split.length == 1) {
-//         return 
-//     }
-//     const id = split[1]
-//     completedMaintenanceId = id;
-//     console.log(id);
-//     fetch(`/api/completedmaintenance/${id}`, {
-//         method: "get",
-//         headers: {
-//             "Content-Type": "application/json",
-//             authorization: "bearer " + localStorage.authToken
-//         }
-//     })
-//     .then(response => response.json())
-//     // .then(completemaintenanceevent => {
-//     //     $('.scheduledDate').text(completemaintenanceevent.date);
-//     //     $('.subMaintenanceResult').text(completemaintenanceevent.details);
-//     //     $('.maintenanceNotes').text(completedmaintenanceevent.notes);
-//     //     console.log(completedmaintenanceevent.date);
-//     //     console.log(completedmaintenanceevent.details);
-//     //     console.log(completedmaintenanceevent.notes);
-//     //     console.log('load completed maintenance by ID ran');
-//     // })
-// }
-
-
-// function submitCompletedMaintenance() {
-//     $('body').on('click', '.submit-complete-button', event => {
-//         // when clicking on “Mark as Completed”, go to new screen w/ this future maintenance event 
-//         //id as the form. At the bottom of the form, you can choose “completed” or “cancel”
-//         const date = $('.card__content').find('.scheduledDate').text();
-//         console.log(date);
-//         const details = $('.card__content').find('.subMaintenanceResult').text();
-//         console.log(details);
-//         const notes = $('.card__content').find('.maintenanceNotes').text();
-//         console.log(notes);
-//         const completedObj = {
-//             date,
-//             details,
-//             notes
-//         }
-//         console.log(completedObj);
-        // if (completedMaintenanceId) {
-        //     completedObj.id = completedMaintenanceId
-        //     fetch(`/api/completedmaintenance/${completedMaintenanceId}`, {
-        //             method: "put",
-        //             headers: {
-        //                 "Content-Type": "application/json",
-        //                 authorization: "bearer " + localStorage.authToken
-        //             },
-        //             body: JSON.stringify(completedObj)
-        //         })
-        //         .then(() => window.location = "completed.html")
-        //     }
-        //     else {
-        //         fetch('/api/completedmaintenance', {
-        //             method: "post",
-        //             headers: {
-        //                 "Content-Type": "application/json",
-        //                 authorization: "bearer " + localStorage.authToken
-        //             },
-        //             body: JSON.stringify(completedObj)
-        //         })
-        //         .then(response => response.json())
-        //         .then(() => window.location = "completed.html")
-        //     }
-        // console.log('submitCompletedMaintenance function ran');
-        // console.log('test');
-//      });
-//  }
-
-// function loadCompletedeMaintenanceById() {
-//     const split = window.location.href.split("=") 
-//     if (split.length == 1) {
-//         return 
-//     }
-//     const id = split[1]
-//     completedMaintenanceId = id;
-//     console.log(id);
-//     fetch(`/api/completedmaintenance/${id}`, {
-//         method: "get",
-//         headers: {
-//             "Content-Type": "application/json",
-//             authorization: "bearer " + localStorage.authToken
-//         }
-//     })
-//     .then(response => response.json())
-//     .then(completemaintenanceevent => {
-//         $('.scheduledDate').text(completemaintenanceevent.date);
-//         $('.subMaintenanceResult').text(completemaintenanceevent.details);
-//         $('.maintenanceNotes').text(completedmaintenanceevent.notes);
-//         console.log(completedmaintenanceevent.date);
-//         console.log(completedmaintenanceevent.details);
-//         console.log(completedmaintenanceevent.notes);
-//         console.log('load completed maintenance by ID ran');
-//     })
-// }
-
-
-
 
 function handleMaintenance() {
     handleClickMaintenanceFluid();
@@ -701,7 +583,6 @@ function handleApp() {
     submitFutureMaintenance();
     submitCompletedMaintenance();
     loadFutureMaintenanceById();
-    //loadCompletedeMaintenanceById();
 }
 
 $(handleApp);

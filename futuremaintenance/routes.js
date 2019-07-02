@@ -51,16 +51,6 @@ router.get('/:id', (req, res) => {
 
 //POST new scheduled maintenance to database
 router.post('/', (req, res) => {
-    // const requiredField = ['date', 'maintenance', 'details'];
-    // for (let i = 0; i < requiredField.length; i++) {
-    //     const field = requiredField[i];
-    //     if (!(field in req.body)) {
-    //         const message = `Missing \`${field}\` in request form`;
-    //         alert(message);
-    //         console.error(message);
-    //         return res.status(400).send(message);
-    //     }
-    // }
     const data = req.body;
     data.user = req.user._id
     FutureMaintenance

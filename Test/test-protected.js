@@ -2,20 +2,10 @@
 
 const chai = require("chai");
 const chaiHttp = require("chai-http");
-//const faker = require('faker');
 const jwt = require('jsonwebtoken');
-
-//const mongoose = require('mongoose');
 
 const expect = chai.expect;
 
-// const {
-//     FutureMaintenance
-// } = require('../futuremaintenance/models');
-
-// const {
-//     CompletedMaintenance
-// } = require('../completedmaintenance/models');
 
 const { app, runServer, closeServer } = require("../server");
 const { User } = require('../users/models');

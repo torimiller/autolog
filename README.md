@@ -49,13 +49,13 @@ Users
 Future Maintenance
 	GET to '/api/futuremaintenance' to view all scheduled maintenance events
 	GET to '/api/futuremaintenance/:id' to view a single scheduled maintenance event by ID
-	POST to '/api/futuremaintenance' to create new trip entry
+	POST to '/api/futuremaintenance' to create new scheduled maintenance event
 	PUT to '/api/futuremaintenance/:id' to edit an existing scheduled maintenance event by ID
     DELETE to '/api/futuremaintenance/:id' to delete a single scheduled maintenance event by ID
 
 Completed Maintenance
 	GET to '/api/completedmaintenance' to view all scheduled maintenance events
 	GET to '/api/completedmaintenance/:id' to view a single scheduled maintenance event by ID
-	POST to '/api/completedmaintenance' to create new trip entry
+	POST to '/api/completedmaintenance' to create new completed maintenance event
 	PUT to '/api/completedmaintenance/:id' to edit an existing scheduled maintenance event by ID
     DELETE to '/api/completedmaintenance/:id' to delete a single scheduled maintenance event by ID
