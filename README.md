@@ -44,7 +44,7 @@ API Documentation
 API endpoints for the back end include:
 Users
 	POST to '/api/auth' to create a new users
-	POST to '/api/users' sign in exciting user
+	POST to '/api/users' sign in existing user
 
 Future Maintenance
 	GET to '/api/futuremaintenance' to view all scheduled maintenance events
